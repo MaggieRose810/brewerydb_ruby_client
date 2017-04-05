@@ -1,0 +1,1 @@
+-Ilib -Ispec -rspec_helper --color --format progress --order rand
