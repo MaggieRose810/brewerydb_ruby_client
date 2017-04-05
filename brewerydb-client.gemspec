@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Ruby client for BreweryDB API"
   spec.description   = "Support for premium features of the API avaiable"
-  spec.homepage      = "https://github.com/maggierose810"
+  spec.homepage      = "https://github.com/MaggieRose810/brewerydb_ruby_client"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
