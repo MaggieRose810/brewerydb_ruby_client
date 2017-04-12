@@ -3,6 +3,21 @@ require "json"
 require "uri"
 
 module Brewerydb
+  class HTTPResponseError < StandardError
+    def initialize(msg, res)
+      super(msg)
+      @res = res
+    end
+
+    def code
+      @res.code
+    end
+
+    def response
+      @res
+    end
+  end
+
   class HTTP
     def initialize
       @host = 'api.brewerydb.com'
@@ -43,7 +58,7 @@ module Brewerydb
        if res.is_a?(Net::HTTPSuccess)
         JSON.parse(res.body)
       else
-        raise "Invalid response #{res.code} #{res.body}"
+        raise HTTPResponseError.new('Invalid response from Brewerydb', res)
       end
     end
 
